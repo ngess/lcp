@@ -1,0 +1,13 @@
+[package]
+name = "lcp"
+version = "0.1.0"
+edition = "2021"
+about="Tool for finding least cost path between two points within a cost raster"
+
+[dependencies]
+clap = { version = "4.5.21", features = ["derive"] }
+ndarray = "0.16.1"
+ndarray-rand = "0.15.0"
+rand = "0.8.5"
+serde = { version = "1.0.215", features = ["derive"] }
+serde_yaml = "0.9.34"
