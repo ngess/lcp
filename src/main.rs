@@ -8,8 +8,10 @@ pub mod raster_generator{
 
 use clap::Parser;
 use data_model::input_model::SimulationArgs;
-use raster_generator::random_raster_builder::create_random_array;
-
+use raster_generator::random_raster_builder::create_random_flat_cost_raster;
+mod graph_util{
+    mod flat_vector;
+}
 
 #[derive(Parser, Debug)]
 #[command(name = "LCP")]
@@ -32,8 +34,8 @@ fn main() {
         }
     };
     println!("Simulation Args: {:?}", simulation_args);
-    let grid = create_random_array(&simulation_args.raster_size, simulation_args.max_value);
-    println!("{:?}", grid);
+    let raster = create_random_flat_cost_raster(&simulation_args.raster_size, simulation_args.max_value);
+    println!("{:?}", raster);
     // println!("CLI ARGS {:?}", cli_args);
     println!("Hello, world!");
 }
