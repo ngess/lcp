@@ -1,10 +1,10 @@
-fn get_index(row: usize, col: usize, col_size: usize)->usize{
-    row * col_size + col
+pub fn get_index(row: usize, col: usize, cols: usize)->usize{
+    row * cols + col
 }
 
-fn index_to_coord(index: usize, col_size: usize)->[usize;2]{
+pub fn index_to_coord(index: usize, cols: usize)->[usize;2]{
     [
-        index/col_size,
-        index%col_size
+        index/cols,
+        index%cols
     ]
 }
